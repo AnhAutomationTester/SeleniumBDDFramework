@@ -1,0 +1,5 @@
+com\web\runners\TestRunner.class
+com\web\stepdefinitions\LoginSteps.class
+com\web\pages\BasePage.class
+com\web\pages\LoginPage.class
+com\web\core\DriverManager.class
