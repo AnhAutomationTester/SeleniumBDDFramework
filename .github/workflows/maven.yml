@@ -15,6 +15,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+
+      - name: Install Scoop and Allure CLI
+        run: |
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+          iwr -useb get.scoop.sh | iex
+          scoop install allure
+          echo "$HOME\scoop\apps\allure\current\bin" | Out-File -Append -FilePath $env:GITHUB_PATH
           
       - name: Run tests
         run: mvn clean test
