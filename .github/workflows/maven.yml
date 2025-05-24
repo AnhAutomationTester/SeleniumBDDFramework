@@ -15,11 +15,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
-      - name: Install Allure CLI on Windows
-        run: |
-          choco install allure.commandline --version=2.20.1 -y
-          refreshenv
           
       - name: Run tests
         run: mvn clean test
