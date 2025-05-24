@@ -1,7 +1,8 @@
 name: Run UI Tests
 
 on:
-  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-from-repo-source]
 
 jobs:
   run-tests:
@@ -25,7 +26,7 @@ jobs:
           
       - name: Run tests
         run: mvn clean test
-        
+
       - name: Generate Allure Report
         run: allure generate allure-results -o allure-report --clean
 
@@ -34,4 +35,3 @@ jobs:
         with:
           name: allure-report
           path: allure-report
-
